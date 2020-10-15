@@ -1,0 +1,86 @@
+body {
+  background-color: whitesmoke;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.image-preview {
+  width: 300px;
+  min-height: 100px;
+  border: 2px solid #dddddd;
+  margin-top: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #cccccc;
+}
+
+.one_line_info h1 {
+  display: inline;
+  font-weight: bold;
+}
+
+.one_line_info p {
+  vertical-align: bottom;
+  float: right;
+}
+
+/* navigation bar */
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* scrollbar */
+.scrollbar {
+	max-height: 300px;
+	border: 1px solid #ddd;
+	display: flex;
+	overflow-x: auto;	
+}
+
+.scrollbar::webkit-scrollbar {
+	width: 0;
+}
+
+.image {
+	border: 1px solid lightblue;
+	min-width: 200px;
+	height: 200px;
+	line-height: 110px;
+	margin-right:2px;
+	background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+
+.scrollbar h5 {
+	text-align: center;
+	margin: 0;
+}

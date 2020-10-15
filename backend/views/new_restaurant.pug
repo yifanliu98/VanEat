@@ -1,0 +1,136 @@
+extends layout
+
+block swal
+    script(src="https://unpkg.com/sweetalert2@7.19.2/dist/sweetalert2.all.js")
+
+block content
+  h1= title
+
+  form(method='POST' action='/restaurants/new' enctype='multipart/form-data')
+    div.form-group
+      label(for='name') Restaurant Name:
+      input#name.form-control(type='name', placeholder='Restaurant Name' name='name' required='true')
+    div.form-group
+      label(for='address') Address:
+      input#address.form-control(type='address', placeholder='address' name='address' required='true')
+    div.form-group
+      label(for='phone_number') Phone Number:
+      input#phone_number.form-control(type='phone', placeholder='phone number' name='phone_number' required='true')
+    div.form-group
+      label(for='category') Category:
+      select#category(name='category')
+        each cat in category_list
+          option(value=cat.category_name) #{cat.category_name}
+    
+    
+    label(for='hours') Open Hours:
+      div.form-group
+        label(for='mon') Monday from ---
+        input(type="time" name="monfrom")
+        label(for='mon') --- to ---
+        input(type="time" name="monto")
+      
+      div.form-group
+        label(for='tue') Tuesday from ---
+        input(type="time" name="tuefrom")
+        label(for='tue') --- to ---
+        input(type="time" name="tueto")
+      
+      div.form-group
+        label(for='wed') Wednesday from ---
+        input(type="time" name="wedfrom")
+        label(for='wed') --- to ---
+        input(type="time" name="wedto")
+      
+      div.form-group
+        label(for='thu') Thursday from ---
+        input(type="time" name="thufrom")
+        label(for='thu') --- to ---
+        input(type="time" name="thuto")
+
+      div.form-group
+        label(for='fri') Friday from ---
+        input(type="time" name="frifrom")
+        label(for='fri') --- to ---
+        input(type="time" name="frito")
+      
+      div.form-group
+        label(for='sat') Saturday from ---
+        input(type="time" name="satfrom")
+        label(for='sat') --- to ---
+        input(type="time" name="satto")
+      
+      div.form-group
+        label(for='sun') Sunday from ---
+        input(type="time" name="sunfrom")
+        label(for='sun') --- to ---
+        input(type="time" name="sunto")
+
+    div.form-group
+      label(for='image') Image:
+      input#image.form-control(type='file', name='image' required='true' multiple)
+      div.image-preview#imgPreview
+        image.image-preview__image(src="")
+    div.form-group
+      label(for='banner') Banner Image:
+      input#banner.form-control(type='file', name='banner' required='true' multiple)
+      div.banner-preview#bannerPreview
+        image.banner-preview__image(src="")
+    
+    button.btn.btn-primary(type='submit') Create
+  p
+    a(href='/restaurants') All Restaurants
+
+block script
+    script.
+        $(document).ready(() => {
+
+            $("#image").on("change", (event) => {
+                const file = event.currentTarget.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    imagePreviewReady("imgPreview");
+                    reader.onload = (event) => {
+                        $("#imgPreview .image-preview__image").attr("src", event.currentTarget.result);
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    imagePreviewReset("imgPreview");
+                }
+            });
+
+            $("#banner").on("change", (event) => {
+                const file = event.currentTarget.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    bannerPreviewReady("bannerPreview");
+                    reader.onload = (event) => {
+                        $("#bannerPreview .banner-preview__image").attr("src", event.currentTarget.result);
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    bannerPreviewReset("bannerPreview");
+                }
+            });
+
+            function imagePreviewReady(imgId) {
+                $(`#${imgId} .image-preview__default-text`).hide();
+                $(`#${imgId} .image-preview__image`).show();
+            }
+
+            function imagePreviewReset(imgId) {
+                $(`#${imgId} .image-preview__default-text`).show();
+                $(`#${imgId} .image-preview__image`).hide();
+            }
+
+            function bannerPreviewReady(imgId) {
+                $(`#${imgId} .banner-preview__default-text`).hide();
+                $(`#${imgId} .banner-preview__image`).show();
+            }
+
+            function bannerPreviewReset(imgId) {
+                $(`#${imgId} .banner-preview__default-text`).show();
+                $(`#${imgId} .banner-preview__image`).hide();
+            }
+        });
+    

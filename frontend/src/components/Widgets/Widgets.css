@@ -1,0 +1,500 @@
+#van-eat-logo {
+    height: 80px;
+    width: 80px;
+}
+
+#van-eat-logo-container {
+    position: absolute;
+    left: 10px;
+    bottom: -15px;
+}
+
+.catclass{
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 4px;
+}
+
+.catclass:hover {
+    cursor: pointer;
+}
+
+.catclass img {
+    float: left;
+    width:  224px;
+    height: 142px;
+    object-fit: cover;
+    border-radius: 4px;
+    /* Here's the trick */
+    background-size: cover;
+    position: relative;
+}
+
+#tittle{
+    position: absolute;
+    bottom: 5px;
+    display: inline-block;
+    left: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.slick-next:before, .slick-prev:before {
+    color: black;
+}
+
+
+
+/* Header */
+#restaurant-header {
+    background-color: #fff;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #E1E5E8;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 900;
+}
+
+#restaurant-header-logo {
+    float: left;
+}
+
+#restaurant-header-logo span{
+    color: #8D9499;
+    font-weight: 800;
+    display: inline-block;
+    font-size: 20px;
+}
+
+#restaurant-header-log-in {
+    float: right;
+    display: block;
+}
+
+#restaurant-header-log-in :hover{
+    cursor: pointer;
+}
+
+
+#restaurant-header-log-in svg {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    display: block;
+}
+
+#restaurant-header-log-in span{
+    color: #8D9499;
+    font-weight: 800;
+    display: inline-block;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-left: 0.5em;
+}
+
+#restaurant-header-search-bar {
+    width: 300px;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#pop-up-window-bottom span{
+    color: #0d4696;
+}
+
+.user-window-wrapper {
+    width: 120px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 18 rgba(0, 0, 0, 0.15);
+    border: 1px solid #eeeeef;
+    z-index: 999;
+    position: absolute;
+    right: 10px;
+    padding: 10px 15px 15px;
+    text-align: left;
+}
+
+.user-window-btn {
+    padding: 0 5px;
+    border-radius: 4px;
+}
+
+.user-window-btn:hover {
+    cursor: pointer;
+    background-color: #e8e8e8;
+}
+
+.user-window-btn span {
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    color: #2b273c;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.user-window-btn svg {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5em;
+    color: #2b273c;
+}
+/* Restaurant List */
+
+.restaurant-item{
+    padding: 4px;
+    margin: 1em auto;
+    border-radius: 4px;
+    display: flex;
+    position: relative;
+    line-height: 2em;
+    background-color: #fff;
+    
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* -moz-box-shadow:    3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow:         3px 3px 5px 6px #ccc; */
+    
+}
+
+.restaurant-item::after{
+    content: "";
+    border-radius: 5px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.restaurant-item:hover{
+    -webkit-transform: scale(1.20, 1.20);
+    transform: scale(1.01, 1.01);
+}
+
+.restaurant-item:hover::after{
+    opacity: 1;
+}
+
+.restaurant-item img{
+    width: 218px;
+    height: 139px;
+    border-radius: 2px;
+}
+
+#restaurant-item-detail {
+    flex-grow: 1;
+    margin-left: 2em;
+}
+
+#restaurant-item-rate-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+#rest-name {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.restaurant-item em{
+    font-style: normal;
+    margin: 0 5px;
+    color: #e8e8e8;
+}
+
+.restaurant-item-rate-txt {
+    margin-left: 0.5em;
+    font-size: small;
+    font-weight: bolder;
+}
+
+.excellent {
+    color: #EA120E;
+}
+
+.good {
+    color: #F64922;
+}
+
+.ok {
+    color: #F99F21;
+}
+
+#number-of-comments {
+    margin-left: .5em;
+    font-size: small;
+    color: #999999;
+}
+
+#number-of-dollar {
+    font-size: small;
+    color: #999999;
+}
+
+.restaurant-item-address-wrapper {
+    color: #999999
+}
+
+#rest-tele{
+    color: #999999
+}
+
+/* review-item-wrapper */
+.review-item-wrapper {
+    width: 100%;
+    padding: 1em;
+    display: flex;
+}
+
+.review-item-avatar-section img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+#review-item-rate {
+    margin-top: .5em;
+}
+
+#review-item-rate span{
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+#review-item-date {
+    margin-left: 1em;
+    color: #8c8c8c;
+}
+
+.review-item-wrapper p {
+    color: #282828;
+    line-height: 24px;
+    font-size: 14px;
+    margin-top: 14px;
+    word-break: break-all;
+}
+
+.review-item-image-section {
+    display: flex;
+}
+
+.review-item-image-wrapper {
+    margin-right: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.review-item-image-section img {
+    height: 8em;
+}
+
+/* review window */
+
+#review-pop-up-window {
+    overflow-y: scroll;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40em;
+    max-height: 90vh;
+    border-radius: 10px;
+    background-color: white;
+    padding: 2em;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0px -2px 4px 0px rgba(0, 0, 0, 0.05);
+}
+
+#review-pop-up-window-header {
+    font-size: 2em;
+}
+
+#review-pop-up-window section:not(:first-child) {
+    margin: 1em 0;
+}
+
+#review-pop-up-window section > div {
+    margin: 1em 0;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+#review-pop-up-window-comment-sections textarea{
+    width: 100%;
+    height: 5em;
+    resize: none;
+    border-radius: 4px;
+    font-size: large;
+    line-height: 1.5em;
+}
+
+#review-pop-up-window-comment-sections p {
+    line-height: 1em;
+    font-size: 0.7em;
+    font-weight: bold;
+    color: #ED5A6B;
+}
+
+/* get idea from https://codepen.io/quinlo/pen/ReMRXz */
+.favorite-dishes-ul {
+    list-style: none;
+    padding-inline-start: 0px !important;
+}
+
+.favorite-dishes-ul li {
+    display: inline;
+    margin: 5px;
+}
+
+.favorite-dishes-ul label {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.favorite-dishes-ul label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Font Awesome\ 5 Free';
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: "\f067";
+    transition: transform .3s ease-in-out;
+}
+
+.favorite-dishes-ul input[type="checkbox"]:checked + label::before {
+    content: "\f00c";
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+.favorite-dishes-ul input[type="checkbox"]:checked + label {
+    border: none;
+    background-color: #ED5A6B;
+    color: #fff;
+    transition: all .2s;
+}
+
+.favorite-dishes-ul input[type="checkbox"] {
+    display: absolute;
+}
+
+.favorite-dishes-ul input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+#add-review-btn {
+    background: #ED5A6B;
+    border: 1px solid #ED5A6B;
+    font-size: 1em;
+    color: #fff;
+    padding: .5em 1em;
+    border-radius: 4px;
+    font-weight: 300;
+}
+
+#add-review-btn:hover{
+    background-color: #EA120E;
+    cursor: pointer;
+}
+
+#unlike-btn {
+    background: #ED5A6B !important;
+    border: 1px solid #ED5A6B !important;
+    font-size: 1em !important;
+    color: #fff !important;
+    padding: .5em 1em !important;
+    border-radius: 4px !important;
+    font-weight: 300 !important;
+}
+
+/* Alert Window */
+
+
+.alert-window-wrapper {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    width: 20em;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    transform: translate(-50%, 0);
+    z-index: 999;
+/* https://stackoverflow.com/questions/30125705/css-how-to-make-an-element-fade-in-and-then-fade-out/30125780 */
+    -webkit-animation: fadeinout 4s linear forwards;
+    animation: fadeinout 4s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+    0%,100% { opacity: 0;}
+    10%,90%{ opacity: 1; }
+}
+  
+@keyframes fadeinout {
+    0%,100% { opacity: 0; }
+    10%,90%{ opacity: 1; }
+}
+
+.alert-window-wrapper svg {
+    display: inline-block;
+    vertical-align: middle;
+    padding-bottom: 3px;
+    margin-right: 10px;
+}
+
+/* special dishes */
+
+.dishclass{
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 4px;
+}
+
+.dishclass img {
+    float: center;
+    width:  220px;
+    height: 135px;
+    border-radius: 4px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}

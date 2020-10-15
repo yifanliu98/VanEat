@@ -1,0 +1,159 @@
+#restaurant-main-page {
+    width: 100vw;
+    padding-bottom: 5%;
+}
+
+#restaurant-main-page-body {
+    width: 100%;
+    max-width: 920px;
+    margin: 1em auto;
+}
+
+.body-header {
+    margin: 1em 0;
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.back-to-all-span {
+    font-size: 0.6em;
+    font-weight: 400;
+    text-decoration: underline;
+    color: blue;
+    margin-left: 1em;
+}
+
+.back-to-all-span:hover {
+    cursor: pointer;
+}
+/* detail restaurant page */
+/* .detail-restaurant-page-banner-wrapper {
+    margin-top: 1em;
+} */
+
+.detail-restaurant-page-banner-wrapper img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.detail-restaurant-page-main-wrapper {
+    width: 100%;
+    max-width: 920px;
+    margin: 1em auto;
+}
+
+.detail-restaurant-page-main-info h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 54px;
+    margin: 0;
+}
+
+
+#detail-page-rating-wrapper {
+    margin-top: .5em;
+}
+
+#detail-page-rating-wrapper span{
+    vertical-align: middle;
+}
+
+.detail-restaurant-rate-txt {
+    margin: 0 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#detail-restaurant-num-rate {
+    color: #757280;
+}
+
+#middle-dot {
+    color: #757280;
+    margin: 0 5px;
+}
+
+.detail-restaurant-page-main-wrapper hr {
+    height: 1px;
+    background-color: #eeeeef;
+    border: none;
+    margin: 2em 0;
+}
+
+.detail-restaurant-page-main-wrapper section > h3 {
+    font-size: 20px;
+}
+
+.detail-restaurant-location-hour-section {
+    display: flex;
+}
+
+.google-map-container {
+    width: 315px;
+    border: 1px solid #e6e6e6;
+    overflow: hidden;
+    color: #2b273c;
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 100px;
+}
+
+.google-map-address-container {
+    padding: 16px;
+}
+
+.hours-table {
+    font-size: 12px;
+}
+
+.hours-table .hours-table-col1{
+    text-align: left;
+    padding-right: 1em;
+}
+
+.hours-table .hours-table-col2{
+    text-align: left;
+    padding-right: 1em;
+    font-weight: normal;
+}
+
+.hours-table .hours-table-col3{
+    text-align: left;
+    color: #f43939;
+}
+
+#detail-page-btn-section {
+    margin-top: 1em;
+}
+
+/* button style */
+#detail-page-btn-section button {
+    vertical-align: top;
+    font-size: 1em;
+}
+
+#detail-page-btn-section svg {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#detail-page-btn-section button:not(:first-child) {
+    margin-left: 1em;
+    color: #ED5A6B;
+    background-color: transparent;
+    border: 1px solid rgb(156, 156, 156);
+    padding: .5em 1em;
+    font-weight: 300;
+    border-radius: 4px;
+}
+
+#detail-page-btn-section button:not(:first-child) span {
+    color: black;
+}
+
+#detail-page-btn-section button:not(:first-child):hover {
+    background-color: #E8E8E8;
+    cursor: pointer;
+}

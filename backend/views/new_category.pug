@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+
+  form(method='POST' action='/category/new' enctype='multipart/form-data')
+    div.form-group
+      label(for='name') Category Name:
+      input#name.form-control(type='name', placeholder='Category Name' name='name' required='true')
+    div.form-group
+      label(for='image') Image:
+      input#image.form-control(type='file' name='image' required='true')
+
+    button.btn.btn-primary(type='submit') Create
+
+//- block script
+//-   script.
+//-     $(document).ready(()=>{
+
+//-       $( ".addButton" ).click(function() {
+//-         var txt1= "<b> I </b>"
+//-         $(".addButton").after(txt1)
+//-       });
+
+//-     });
+    

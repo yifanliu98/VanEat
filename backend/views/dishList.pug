@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+  each dish in dishList
+    li 
+        a(href=dish.url) #{dish.dishName} 
+        //- a(href='/restaurants/new') Edit resaurant
+    //-   p #[strong Create At:] #{restaurant.createAt}
+
+  else
+    li There are no Dishes.
+  P
+    a(href='/dishes/new') Create New Dishes

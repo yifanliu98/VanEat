@@ -1,0 +1,70 @@
+extends layout
+
+block content
+
+  h1= title
+  div(class='one_line_info')
+    h1 Cuisines & Categories
+    p 
+      a(href='/category') All Categories
+      br
+      a(href='/category/new') Create a New Category
+
+  form(method='POST' action='/restaurants/category')
+    div.form-group
+      select(name='category')
+        each category in category_list
+          option(value=category.category_name) #{category.category_name}
+      input(type='submit' value='Search')
+  br
+
+  div.scrollbar
+    each category in category_list
+      div
+        img.image(src=category.image)
+        h5
+          a(href=category.url) #{category.category_name}
+    else
+      p There is no category.
+
+
+
+  //- div.row.row-cols-1.row-cols-md-2
+  //-   each category in category_list
+  //-     div.col.mb-4
+  //-       img.card-img-top(src=category.image)
+  //-       div.card-body
+  //-         h5.card-title 
+  //-           a(href=category.url) #{category.category_name}
+  //-   else
+  //-     p There is no category.
+
+
+  //- marquee
+  //-   each category in category_list
+  //-     img(src=category.image width=150 height=100 border=0)
+  //-   else
+  //-     p There are no category.
+  
+  br
+  br
+
+  .w3-container
+  div(class='one_line_info')
+    h1 All Restaurants
+    P
+      br
+      a(href='/restaurants/new') Create a New Restaurant  
+  br
+  ul.w3-ul.w3-card-4
+    each restaurant in restaurants_list
+      li.w3-bar
+        //- span.w3-bar-item.w3-button.w3-white.w3-xlarge.w3-right(onclick="this.parentElement.style.display='none'") &times;
+        img.w3-bar-item.w3-circle.w3-hide-small(src=restaurant.image style='width:85px')
+        .w3-bar-item
+          span.w3-large 
+            a(href=restaurant.url) #{restaurant.name} 
+          br
+          span #{restaurant.address} | #{restaurant.phone_number}
+    else
+      li There are no restaurant.

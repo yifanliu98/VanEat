@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1=title
+
+    p #[strong Dish Name:] #{dish.dishName}
+    if restaurant
+        a(href=restaurant.url) #{restaurant.name}
+    image.image-preview(src=dish.img, alt="Image Preview")

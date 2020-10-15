@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  
+  br
+  br
+
+  .w3-container
+  div(class='div_admin')
+    div(class='one_line_info')
+      h1= title
+      P
+        a(href='/restaurants') All Restaurants
+    br
+    ul.w3-ul.w3-card-4
+      each restaurant in restaurants_list
+        li.w3-bar
+          span.w3-bar-item.w3-button.w3-white.w3-xlarge.w3-right(onclick="this.parentElement.style.display='none'") &times;
+          img.w3-bar-item.w3-circle.w3-hide-small(src=restaurant.image style='width:85px')
+          .w3-bar-item
+            span.w3-large 
+              a(href=restaurant.url) #{restaurant.name} 
+            br
+            span #{restaurant.address} | #{restaurant.phone_number}
+      else
+        li There are no restaurant.

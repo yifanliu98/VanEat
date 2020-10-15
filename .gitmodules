@@ -1,0 +1,6 @@
+[submodule "frontend"]
+	path = frontend
+	url = git@csil-git1.cs.surrey.sfu.ca:yha150/trip-advisor-front-end.git
+[submodule "backend"]
+	path = backend
+	url = git@csil-git1.cs.surrey.sfu.ca:zhiqiq/470-project-back-end.git

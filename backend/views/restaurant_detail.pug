@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1=title
+  
+  p #[strong Restaurant:] #{restaurant_detail.name}
+  p #[strong Address:] #{restaurant_detail.address}
+  p #[strong Phone Number:] #{restaurant_detail.phone_number}
+  p #[strong Category:] #{restaurant_detail.category}
+  p #[strong Average Price:] #{restaurant_detail.average_price}
+  p #[strong Opening Hours:] 
+
+  p #[strong Monday ] #{restaurant_detail.hours['Mon']}
+  p #[strong Tuesday ] #{restaurant_detail.hours['Tue']}
+  p #[strong Wednesday ] #{restaurant_detail.hours['Wed']}
+  p #[strong Thursday ] #{restaurant_detail.hours['Thu']}
+  p #[strong Friday ] #{restaurant_detail.hours['Fri']}
+  p #[strong Saturday ] #{restaurant_detail.hours['Sat']}
+  p #[strong Sunday ] #{restaurant_detail.hours['Sun']}
+
+  p #[strong Rate:] #{restaurant_detail.rate}
+  p #[strong Review:] #{restaurant_detail.review}
+  p #[strong Image:]
+    img(src=restaurant_detail.image style='width:85px')
+    //- else
+    //-   p There is no image.
+  p
+    a(href='/restaurants') All Restaurants
+

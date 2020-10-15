@@ -1,0 +1,22 @@
+version: '3'
+services:
+  # frontend web server
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+    ports: 
+      - "3000:3000"
+    # volumes:
+    #   - ./frontend:/app
+    #   - /app/node_modules
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-web
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend:/web
+      - /web/node_modules
+  # backend web server

@@ -1,0 +1,62 @@
+extends layout
+
+block content
+  br
+  br
+
+  div(class='one_line_info')
+    h1 All Users
+  br
+  table.table.table-hover
+    thead
+      tr
+        th(scope="col") #
+        th(scope="col") id
+        th(scope="col") username
+        th(scope="col") email
+        th(scope="col") isDeleted
+        th(scope="col") isThirdParty
+        th(scope="col") reviews
+        th(scope="col") favorites
+
+    tbody
+      each user, index in user_list    
+        tr
+          th(scope="row") #{index+1}
+          td #{user._id}
+          td #{user.username}
+          td #{user.email}
+          td #{user.isDeleted}
+          td #{user.isThirdParty}
+          td #{user.reviews.length}
+          td #{user.favorites.length}
+
+      else
+        p There is no user.
+  br
+  br
+  div(class='div_main')
+    div(class='one_line_info')
+      h1 All admin Users
+      p
+        br
+        a(href="/register") Create a New admin User
+    br
+    table.table.table-hover
+      thead
+        tr
+          th(scope="col") #
+          th(scope="col") id
+          th(scope="col") username
+
+      tbody
+        each user, index in admin_list    
+          tr
+            th(scope="row") #{index+1}
+            td #{user._id}
+            td #{user.username}
+
+        else
+          p There is no admin user.
+  
+
